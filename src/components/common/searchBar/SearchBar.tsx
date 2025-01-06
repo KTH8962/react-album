@@ -1,12 +1,12 @@
 import { useState } from "react";
 import styles from "./SearchBar.module.scss";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { searchState } from "@/store/atoms/searchState";
 import { pageState } from "@/store/atoms/pageState";
 
 function SearchBar() {
-  const [search, setSearch] = useRecoilState(searchState);
-  const [page, setPage] = useRecoilState(pageState);
+  const setSearch = useSetRecoilState(searchState);
+  const setPage = useSetRecoilState(pageState);
   const [text, setText] = useState("");
   const changeText = (event: React.ChangeEvent<HTMLInputElement>) => {
     //console.log(event.target.value);
