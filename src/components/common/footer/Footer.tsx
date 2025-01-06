@@ -49,7 +49,7 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={styles.pagenation}>
         <button className={styles.pagenation__button} onClick={moveToPrev}>
-          <img src="src/assets/icons/icon-arrowLeft.svg" alt="이전버튼" />
+          <img src="/assets/icons/icon-arrowLeft.svg" alt="이전버튼" />
         </button>
         {/* 변경될 UI 부분 */}
         {/* <span>1</span> */}
@@ -72,7 +72,7 @@ function Footer() {
             );
           })}
         <button className={styles.pagenation__button} onClick={moveToNext}>
-          <img src="src/assets/icons/icon-arrowRight.svg" alt="다음버튼" />
+          <img src="/assets/icons/icon-arrowRight.svg" alt="다음버튼" />
         </button>
       </div>
     </footer>

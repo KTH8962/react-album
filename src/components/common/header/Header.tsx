@@ -18,7 +18,7 @@ function Header() {
         onClick={() => moveToPage("main")}
       >
         <img
-          src="src/assets/images/image-logo.png"
+          src="/assets/images/image-logo.png"
           alt="logo"
           className={styles.header__logoBox__logo}
         />

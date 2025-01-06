@@ -41,7 +41,7 @@ function SearchBar() {
           onKeyDown={handleKeyDown}
         />
         <img
-          src="src/assets/icons/icon-search.svg"
+          src="/assets/icons/icon-search.svg"
           alt="검색 아이콘"
           onClick={onSearch}
         />
