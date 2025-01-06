@@ -23,9 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-# Vite 환경 변수 타입 정의 파일을 Git에서 제외
-vite-env.d.ts
-
 # .env 파일을 git에서 제외
 .env
 
