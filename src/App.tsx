@@ -4,6 +4,7 @@ import { RecoilRoot } from "recoil";
 // 페이지 컴포넌트
 import MainPage from "@pages/index/Index";
 //const MainPage = React.lazy(() => import("@pages/index/Index"));
+import BookmarkPage from "@pages/bookmark/index";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route index path="/" element={<MainPage />}></Route>
-          <Route path="/:id" element={<MainPage />}></Route>
+          <Route path="/search/:id" element={<MainPage />}></Route>
+          <Route path="/bookmark" element={<BookmarkPage />}></Route>
         </Routes>
       </BrowserRouter>
     </RecoilRoot>

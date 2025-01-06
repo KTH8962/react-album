@@ -2,11 +2,13 @@ import { useState } from "react";
 import styles from "./SearchBar.module.scss";
 import { useRecoilState } from "recoil";
 import { searchState } from "@/store/atoms/searchState";
+import { pageState } from "@/store/atoms/pageState";
 
 function SearchBar() {
   const [search, setSearch] = useRecoilState(searchState);
+  const [page, setPage] = useRecoilState(pageState);
   const [text, setText] = useState("");
-  const changeText = (event) => {
+  const changeText = (event: React.ChangeEvent<HTMLInputElement>) => {
     //console.log(event.target.value);
     setText(event.target.value);
   };
@@ -20,8 +22,9 @@ function SearchBar() {
     }
   };
   const fnSearch = () => {
+    //input 태그 안에 빈 값으로 검색하였을 때 => searching default value
+    setPage(1);
     if (text === "") {
-      //input 태그 안에 빈 값으로 검색하였을 때 => searching default value
       setSearch("Korea");
     } else {
       setSearch(text); // 작성한 Input Value 값 할당

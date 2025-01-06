@@ -19,7 +19,7 @@ export const imageData = selector({
         `${API_URL}?query=${searchValue}&client_id=${API_KEY}&page=${pageValue}&per_page=${PER_PAGE}`
       );
       //console.log(res);
-      return res.data.results;
+      return res.data;
     } catch (error) {
       console.log(error);
     }

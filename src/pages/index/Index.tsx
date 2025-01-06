@@ -1,14 +1,15 @@
+import { useMemo, useState } from "react";
 import { useRecoilValueLoadable } from "recoil";
 import { imageData } from "@/store/selectors/imageSelectors";
 import Header from "@/components/common/header/Header";
 import SearchBar from "@/components/common/searchBar/SearchBar";
 import Nav from "@/components/common/navigation/Nav";
 import Footer from "@/components/common/footer/Footer";
-import styles from "./styles/index.module.scss";
 import Card from "./components/Card";
 import DetailDialog from "@/components/common/dialog/DetailDialog";
+import Loading from "./components/Loading";
+import styles from "./styles/index.module.scss";
 import { CardDTO } from "./types/card";
-import { useMemo, useState } from "react";
 
 function Index() {
   //const imgSelector = useRecoilValue(imageData);
@@ -20,7 +21,7 @@ function Index() {
     //console.log(imgSelector);
     switch (imgSelector.state) {
       case "hasValue":
-        return imgSelector.contents.map((card: CardDTO) => {
+        return imgSelector.contents.results.map((card: CardDTO) => {
           return (
             <Card
               data={card}
@@ -31,7 +32,7 @@ function Index() {
           );
         });
       case "loading":
-        return <div>Loading..</div>;
+        return <Loading />;
       default:
         return null;
     }
